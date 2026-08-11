@@ -1,0 +1,27 @@
+.theorem-box {
+  background: #f8fafc;
+  border-left: 4px solid #2563eb;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+}
+.theorem-head {
+  color: #1e40af;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+@media print {
+  h2, h3 {
+    break-before: page;
+  }
+}
+
+/* Web Screen "Page View" Effect */
+@media screen {
+  h2 {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px dashed #e2e8f0; /* Visual section separator */
+  }
+}

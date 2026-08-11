@@ -1,0 +1,21 @@
+typst compile --features html --format html src/main.typ raw.html
+
+# 2. Wrap with a styled HTML shell
+cat << 'EOF' > index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <style>
+    body { max-width: 70ch; margin: 0 auto; padding: 2rem 1rem; }
+    pre { padding: 1rem; border-radius: 6px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+EOF
+
+cat raw.html >> index.html
+echo "</body></html>" >> index.html
